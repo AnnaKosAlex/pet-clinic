@@ -14,13 +14,13 @@ public class Clinic {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "clinic_id", unique = true, nullable = false)
-    private int clinictId;
+    private int clinicId;
 
     @Column(name = "address")
     private String address;
 
-    @Column(name = "oppening_hours")
-    private Date oppeningHours;
+    @Column(name = "opening_hours")
+    private Date openingHours;
 
     @Column(name = "closing_hours")
     private Date closingHours;
@@ -28,24 +28,24 @@ public class Clinic {
     @Column(name = "phone")
     private String phone;
 
-    public Clinic(int clinictId, String address,
-                  Date oppeningHours, Date closingHours, String phone) {
+    public Clinic(int clinicId, String address,
+                  Date openingHours, Date closingHours, String phone) {
         this.address = address;
-        this.clinictId = clinictId;
+        this.clinicId = clinicId;
         this.closingHours = closingHours;
-        this.oppeningHours = oppeningHours;
+        this.openingHours = openingHours;
         this.phone = phone;
     }
 
     public Clinic() {
     }
 
-    public int getClinictId() {
-        return clinictId;
+    public int getClinicId() {
+        return clinicId;
     }
 
-    public void setClinictId(int clinictId) {
-        this.clinictId = clinictId;
+    public void setClinicId(int clinicId) {
+        this.clinicId = clinicId;
     }
 
     public String getAddress() {
@@ -57,11 +57,11 @@ public class Clinic {
     }
 
     public Date getOppeningHours() {
-        return oppeningHours;
+        return openingHours;
     }
 
     public void setOppeningHours(Date oppeningHours) {
-        this.oppeningHours = oppeningHours;
+        this.openingHours = oppeningHours;
     }
 
     public Date getClosingHours() {

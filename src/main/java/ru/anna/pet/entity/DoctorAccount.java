@@ -18,18 +18,18 @@ public class DoctorAccount {
     private String login;
 
     @Column(name = "password")
-    private String qualification;
+    private String password;
 
     @Column(name = "doctor_id")
     @OneToOne
     @JoinColumn(name = "doctor_id")
     private Doctor doctorId;
 
-    public DoctorAccount(int accountId, String login, String qualification, Doctor doctorId) {
+    public DoctorAccount(int accountId, String login, String password, Doctor doctorId) {
         this.accountId = accountId;
         this.doctorId = doctorId;
         this.login = login;
-        this.qualification = qualification;
+        this.password = password;
 
     }
 
@@ -53,12 +53,12 @@ public class DoctorAccount {
         this.login = login;
     }
 
-    public String getQualification() {
-        return qualification;
+    public String getPassword() {
+        return password;
     }
 
-    public void setQualification(String qualification) {
-        this.qualification = qualification;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public Doctor getDoctorId() {

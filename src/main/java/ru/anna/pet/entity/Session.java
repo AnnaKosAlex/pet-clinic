@@ -18,8 +18,8 @@ public class Session {
     @Column(name = "session_id", unique = true, nullable = false)
     private int sessionId;
 
-    @Column(name = "Date_time")
-    private Date DateTime;
+    @Column(name = "date_time")
+    private Date dateTime;
 
     @Column(name = "client_id")
     @ManyToOne
@@ -27,9 +27,9 @@ public class Session {
     private ClientCard clientId;
 
     @Column(name = "doctor_id")
-    @ManyToMany
+    @OneToOne
     @JoinColumn(name = "doctor_id")
-    private Set<Doctor> doctorId;
+    private Doctor doctorId;
 
     @Column(name = "clinic_id")
     @ManyToOne
@@ -40,10 +40,10 @@ public class Session {
     }
 
     public Session(int sessionId, Date dateTime,
-                   ClientCard clientId, Set<Doctor> doctorId,
+                   ClientCard clientId, Doctor doctorId,
                    Clinic clinicId) {
         this.sessionId = sessionId;
-        DateTime = dateTime;
+        this.dateTime = dateTime;
         this.clientId = clientId;
         this.doctorId = doctorId;
         this.clinicId = clinicId;
@@ -58,11 +58,11 @@ public class Session {
     }
 
     public Date getDateTime() {
-        return DateTime;
+        return dateTime;
     }
 
     public void setDateTime(Date dateTime) {
-        DateTime = dateTime;
+        dateTime = dateTime;
     }
 
     public ClientCard getClientId() {
@@ -73,19 +73,19 @@ public class Session {
         this.clientId = clientId;
     }
 
-    public Set<Doctor> getDoctorId() {
-        return doctorId;
-    }
-
-    public void setDoctorId(Set<Doctor> doctorId) {
-        this.doctorId = doctorId;
-    }
-
     public Clinic getClinicId() {
         return clinicId;
     }
 
     public void setClinicId(Clinic clinicId) {
         this.clinicId = clinicId;
+    }
+
+    public Doctor getDoctorId() {
+        return doctorId;
+    }
+
+    public void setDoctorId(Doctor doctorId) {
+        this.doctorId = doctorId;
     }
 }

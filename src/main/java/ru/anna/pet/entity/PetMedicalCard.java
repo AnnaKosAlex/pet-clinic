@@ -1,8 +1,6 @@
 package ru.anna.pet.entity;
 
 
-import ch.qos.logback.core.net.server.Client;
-
 import javax.persistence.*;
 
 /**
@@ -36,8 +34,8 @@ public class PetMedicalCard {
     @JoinColumn(name = "doctor_id")
     private Doctor doctorId;
 
-    @Column(name = "diagnisis")
-    private String diagnisis;
+    @Column(name = "diagnosis")
+    private String diagnosis;
 
     @Column(name = "appointment")
     private String appointment;
@@ -47,30 +45,13 @@ public class PetMedicalCard {
     }
 
     public PetMedicalCard(String petName, String petType, int age, ClientCard ownerId,
-                          Doctor doctorId, String diagnisis, String appointment) {
+                          Doctor doctorId, String diagnosis, String appointment) {
         this.petName = petName;
         this.petType = petType;
         this.age = age;
         this.ownerId = ownerId;
         this.doctorId = doctorId;
-        this.diagnisis = diagnisis;
-        this.appointment = appointment;
-    }
-
-
-    public String getDiagnisis() {
-        return diagnisis;
-    }
-
-    public void setDiagnisis(String diagnisis) {
-        this.diagnisis = diagnisis;
-    }
-
-    public String getAppointment() {
-        return appointment;
-    }
-
-    public void setAppointment(String appointment) {
+        this.diagnosis = diagnosis;
         this.appointment = appointment;
     }
 
@@ -120,5 +101,21 @@ public class PetMedicalCard {
 
     public void setDoctorId(Doctor doctorId) {
         this.doctorId = doctorId;
+    }
+
+    public String getDiagnosis() {
+        return diagnosis;
+    }
+
+    public void setDiagnosis(String diagnosis) {
+        this.diagnosis = diagnosis;
+    }
+
+    public String getAppointment() {
+        return appointment;
+    }
+
+    public void setAppointment(String appointment) {
+        this.appointment = appointment;
     }
 }

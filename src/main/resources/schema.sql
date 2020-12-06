@@ -35,7 +35,7 @@ priсe int not null
 create table clinic(
 clinic_id serial not null primary key,
 address varchar(250) not null,
-openning_hours time,
+opening_hours time,
 closing_hours time,
 phone varchar(250) not null
 );

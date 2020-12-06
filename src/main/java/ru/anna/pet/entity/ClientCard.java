@@ -1,8 +1,6 @@
 package ru.anna.pet.entity;
 
 
-import com.sun.istack.NotNull;
-
 import javax.persistence.*;
 
 /**
@@ -18,15 +16,12 @@ public class ClientCard {
     private int clientId;
 
     @Column(name = "client_name")
-    @NotNull
-    private String ClientName;
+    private String сlientName;
 
     @Column(name = "phone")
-    @NotNull
     private String phone;
 
     @Column(name = "email")
-    @NotNull
     private String email;
 
     public ClientCard() {
@@ -34,7 +29,7 @@ public class ClientCard {
     }
     public ClientCard(int clientId, String clientName, String phone, String email) {
         this.clientId = clientId;
-        this.ClientName = clientName;
+        this.сlientName = clientName;
         this.email = email;
         this.phone = phone;
 
@@ -50,11 +45,11 @@ public class ClientCard {
     }
 
     public String getClientName() {
-        return ClientName;
+        return сlientName;
     }
 
     public void setClientName(String clientName) {
-        ClientName = clientName;
+        сlientName = clientName;
     }
 
     public String getPhone() {
